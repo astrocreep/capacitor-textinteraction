@@ -1,18 +1,16 @@
 import Foundation
 import Capacitor
 
-/**
- * Please read the Capacitor iOS Plugin Development Guide
- * here: https://capacitorjs.com/docs/plugins/ios
- */
 @objc(TextInteractionPlugin)
 public class TextInteractionPlugin: CAPPlugin {
-    private let implementation = TextInteraction()
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.resolve([
-            "value": implementation.echo(value)
-        ])
+    @objc func toggle(_ call: CAPPluginCall) {
+        let enabled = call.getBool("enabled") ?? false
+        if #available(iOS 14.5, *) {
+            self.bridge?.webView?.configuration.preferences.isTextInteractionEnabled = enabled
+            call.resolve(["success": true])
+        } else {
+            call.resolve(["success": false])
+        }
     }
 }

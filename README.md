@@ -1,6 +1,6 @@
 # capacitor-textinteraction
 
-Toggle text interaction in Capacitor.js based iOS apps
+Toggle text interaction in Capacitor based iOS apps
 
 ## Install
 
@@ -13,25 +13,45 @@ npx cap sync
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
+* [`toggle(...)`](#toggle)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### echo(...)
+### toggle(...)
 
 ```typescript
-echo(options: { value: string; }) => Promise<{ value: string; }>
+toggle(options: TextInteractionOptions) => any
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
+Toggle text interaction (selection) on the Capacitor WebView.
 
-**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+| Param         | Type                                                                      |
+| ------------- | ------------------------------------------------------------------------- |
+| **`options`** | <code><a href="#textinteractionoptions">TextInteractionOptions</a></code> |
+
+**Returns:** <code><code>Promise&lt;<a href="#TextInteractionResult">TextInteractionResult</a>&gt;</code>
 
 --------------------
+
+
+### Interfaces
+
+
+#### TextInteractionOptions
+
+| Prop          | Type                 | Description                                                                                                                                   |
+| ------------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`enabled`** | <code>boolean</code> | Whether text interaction should be enabled or disabled. Disabling suppresses the magnifier lens that Apple reintroduced with iOS 15. iOS only |
+
+
+#### TextInteractionResult
+
+| Prop          | Type                 | Description                                      |
+| ------------- | -------------------- | ------------------------------------------------ |
+| **`success`** | <code>boolean</code> | true if supported (&gt;= iOS 14.5), false if not |
 
 </docgen-api>
