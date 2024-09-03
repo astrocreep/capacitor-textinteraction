@@ -1,3 +1,9 @@
+# ⚠️ Deprecared 💀
+
+Moved this plugin to the new monorepo at https://github.com/astrocreep/capacitor-plugins
+
+----
+
 # capacitor-textinteraction
 
 Toggle text interaction in Capacitor based iOS apps.
@@ -44,7 +50,7 @@ use native text input overlays.
 | ------------- | ------------------------------------------------------------------------- |
 | **`options`** | <code><a href="#textinteractionoptions">TextInteractionOptions</a></code> |
 
-**Returns:** <code>Promise&lt;<a href="#TextInteractionResult">TextInteractionResult</a>&gt;</code>
+**Returns:** <code>any</code>
 
 **Since:** 1.0.0
 
